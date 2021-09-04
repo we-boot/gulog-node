@@ -7,6 +7,18 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.10.tgz#7aa732cc47341c12a16b7d562f519c2383b6d4fc"
   integrity sha512-S63Dlv4zIPb8x6MMTgDq5WWRJQe56iBEY0O3SOFA9JrRienkOVDXSXBjjJw6HTNQYSE2JI6GMCR6LVbIMHJVvA==
 
+gulog-js@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.6.tgz#0ff9509d6d135a5ab8ef17d11ff02b22c9f1b4a2"
+  integrity sha512-C6c1zFsV9IuxwfprMDbH3eYc502gN7m+YTntabqIrjoMxgZkGuRKEwVQHm1oWLiN1MHnsrULNPOZt83rtsDecQ==
+  dependencies:
+    node-fetch "^2"
+
+node-fetch@^2:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+
 typescript@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.2.tgz#6d618640d430e3569a1dfb44f7d7e600ced3ee86"
