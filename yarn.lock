@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.10.tgz#7aa732cc47341c12a16b7d562f519c2383b6d4fc"
   integrity sha512-S63Dlv4zIPb8x6MMTgDq5WWRJQe56iBEY0O3SOFA9JrRienkOVDXSXBjjJw6HTNQYSE2JI6GMCR6LVbIMHJVvA==
 
-gulog-js@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.10.tgz#695313de5dabcbee8aee3ac95d0578b7e5208fd9"
-  integrity sha512-Ev711mIDJqKbMy2qGI9vvli7Pz3fAJl4T59UDegmtNOjKo0vukzoPp5AqzOpnFIpMAU35Wh0gA59hL3N1yyiYg==
+gulog-js@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.11.tgz#6b6c377596c5a98b0f921f241e93d8ebe5998792"
+  integrity sha512-pkfMiRtay4Wa9cinV7DD4nBgPm3wKtY80yDKw9BRqCUOvDY0Q125FgBq0dRs7d3sWkG01qpm3Ru2cHpfi7YSTQ==
   dependencies:
     node-fetch "^2"
 
