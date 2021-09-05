@@ -1,5 +1,5 @@
 import { AsyncLocalStorage } from "async_hooks";
-import Gulog from "gulog-js";
+import * as Gulog from "gulog-js";
 
 let store = new AsyncLocalStorage<Gulog.Process>();
 

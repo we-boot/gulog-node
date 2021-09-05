@@ -161,6 +161,20 @@ gulog-js@^1.0.8:
   dependencies:
     node-fetch "^2"
 
+gulog-js@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.9.tgz#81afef9af9193ddf9ae05a3dc23699f203591ee8"
+  integrity sha512-w7Y42on3ppzNr3pgwEsEtQDv7KqcfZzpFWOo+ws1InNPcdDjnfk6JQHoKNRFfePCFPgE+jU2qTyx1Nyk3wEq9w==
+  dependencies:
+    node-fetch "^2"
+
+gulog-node@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gulog-node/-/gulog-node-1.0.1.tgz#67ea149f14cacf14dedd843f9ab561ed7907c13a"
+  integrity sha512-HynH5wOqukXMgRFyDCqFBUyp4ldnYLNGpB5eqM23vMJ8QGtaXW/hXk5K/Jw9wSNzZTSlxMQMEI+aur694gylug==
+  dependencies:
+    gulog-js "^1.0.8"
+
 http-errors@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.2.tgz#4f5029cf13239f31036e5b2e55292bcfbcc85c8f"

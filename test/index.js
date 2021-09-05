@@ -1,8 +1,8 @@
 const express = require("express");
-const Gulog = require("gulog-node");
+const gulog = require("gulog-node");
 
-Gulog.init({
-    token: "pm6t6du6pCKgefUYdM",
+gulog.init({
+    token: "Y9Zgx55xlQweghPx2n",
     version: "1.0.0",
     endpoint: "http://localhost:3000",
 });
@@ -10,23 +10,34 @@ Gulog.init({
 const app = express();
 
 app.use((req, res, next) => {
-    Gulog.withProcess("request", { method: req.method }, next);
+    gulog.withProcess("request", { method: req.method }, next);
 });
 
 app.get("/", (req, res, next) => {
-    Gulog.log("sending home");
+    gulog.log("sending home");
 
     res.end("this is the home page!");
 
-    Gulog.end("ok");
+    gulog.end("ok");
 });
 
 app.get("/secret", (req, res, next) => {
-    Gulog.warn("user visits secret page", req.socket.remoteAddress);
+    gulog.warn("user visits secret page", req.socket.remoteAddress);
 
     res.end("you can't be here!!!");
 
-    Gulog.end("ok");
+    gulog.end("ok");
+});
+
+app.use((err, req, res, next) => {
+    gulog.error(String(err));
+    gulog.end("error");
+});
+
+app.use((req, res, next) => {
+    gulog.error(`could not find ${req.method} ${req.path}`);
+    gulog.end("error-404");
+    res.end("not found");
 });
 
 app.listen(5000);
