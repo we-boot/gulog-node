@@ -15,10 +15,10 @@ let store = new AsyncLocalStorage<Gulog.Process>();
  * @param overrideSettings Settings to override Gulog.init()
  * @param callback Every call to log, info, warn, error ... in this function will log to this newly created process.
  */
-export function withGulog<T>(type: string, callback: () => T): T;
-export function withGulog<T>(type: string, initiatorData: Gulog.InitiatorData, callback: () => T): T;
-export function withGulog<T>(type: string, initiatorData: Gulog.InitiatorData, overrideSettings: Gulog.Settings, callback: () => T): T;
-export function withGulog<T>(type: string, arg0: any, arg1?: any, arg2?: any): T {
+export function withProcess<T>(type: string, callback: () => T): T;
+export function withProcess<T>(type: string, initiatorData: Gulog.InitiatorData, callback: () => T): T;
+export function withProcess<T>(type: string, initiatorData: Gulog.InitiatorData, overrideSettings: Gulog.Settings, callback: () => T): T;
+export function withProcess<T>(type: string, arg0: any, arg1?: any, arg2?: any): T {
     let parentProcess = store.getStore();
     if (typeof arg0 === "function") {
         let process = new Gulog.Process(type, undefined, parentProcess);
