@@ -1,5 +1,6 @@
 import { AsyncLocalStorage } from "async_hooks";
 import * as Gulog from "gulog-js";
+import { Process } from "gulog-js";
 
 let store = new AsyncLocalStorage<Gulog.Process>();
 
@@ -17,19 +18,41 @@ let store = new AsyncLocalStorage<Gulog.Process>();
  */
 export function withProcess<T>(type: string, callback: () => T): T;
 export function withProcess<T>(type: string, initiatorData: Gulog.InitiatorData, callback: () => T): T;
-export function withProcess<T>(type: string, initiatorData: Gulog.InitiatorData, overrideSettings: Gulog.Settings, callback: () => T): T;
+export function withProcess<T>(
+    type: string,
+    initiatorData: Gulog.InitiatorData,
+    overrideSettings: Gulog.Settings & { autoEnd: boolean },
+    callback: () => T
+): T;
 export function withProcess<T>(type: string, arg0: any, arg1?: any, arg2?: any): T {
     let parentProcess = store.getStore();
+
+    let callback: () => T,
+        initiatorData: Gulog.InitiatorData | undefined = undefined,
+        settings: (Gulog.Settings & { autoEnd: boolean }) | undefined = undefined;
     if (typeof arg0 === "function") {
-        let process = new Gulog.Process(type, undefined, parentProcess);
-        return store.run(process, arg0);
+        callback = arg0;
     } else if (typeof arg1 === "function") {
-        let process = new Gulog.Process(type, arg0, parentProcess);
-        return store.run(process, arg1);
+        initiatorData = arg0;
+        callback = arg1;
     } else {
-        let process = new Gulog.Process(type, arg0, parentProcess, arg1);
-        return store.run(process, arg2);
+        initiatorData = arg0;
+        settings = arg1;
+        callback = arg2;
     }
+
+    let process = new Process(type, initiatorData, parentProcess, settings);
+    let result = store.run(process, callback);
+
+    if (!process.ended && settings?.autoEnd !== false) {
+        if (result instanceof Promise) {
+            result.then(() => process.end(0));
+        } else {
+            process.end(0);
+        }
+    }
+
+    return result;
 }
 
 export function getCurrentProcess() {
