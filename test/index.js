@@ -10,7 +10,7 @@ Gulog.init({
 const app = express();
 
 app.use((req, res, next) => {
-    Gulog.withGulog("request", { method: req.method }, next);
+    Gulog.withProcess("request", { method: req.method }, next);
 });
 
 app.get("/", (req, res, next) => {
