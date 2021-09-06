@@ -7,14 +7,19 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.10.tgz#7aa732cc47341c12a16b7d562f519c2383b6d4fc"
   integrity sha512-S63Dlv4zIPb8x6MMTgDq5WWRJQe56iBEY0O3SOFA9JrRienkOVDXSXBjjJw6HTNQYSE2JI6GMCR6LVbIMHJVvA==
 
-gulog-js@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.11.tgz#6b6c377596c5a98b0f921f241e93d8ebe5998792"
-  integrity sha512-pkfMiRtay4Wa9cinV7DD4nBgPm3wKtY80yDKw9BRqCUOvDY0Q125FgBq0dRs7d3sWkG01qpm3Ru2cHpfi7YSTQ==
+cross-fetch@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
   dependencies:
-    node-fetch "^2"
+    node-fetch "2.6.1"
 
-node-fetch@^2:
+gulog-js@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/gulog-js/-/gulog-js-1.0.12.tgz#07fd880a5af917020801314dde8ceefdf49c652a"
+  integrity sha512-a6GeH2kX/DcoFCn5mOUG/0q6/oycakwmRWWhqvf2m/24QrtiYdFI+Zz0eMmnGPLjMiYqLaKboOR+Y+r9JjiLhA==
+
+node-fetch@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==

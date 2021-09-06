@@ -1,3 +1,4 @@
+import "cross-fetch/polyfill";
 import { AsyncLocalStorage } from "async_hooks";
 import * as Gulog from "gulog-js";
 import { Process } from "gulog-js";

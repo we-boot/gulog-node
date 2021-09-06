@@ -2,9 +2,9 @@ const express = require("express");
 const gulog = require("gulog-node");
 
 gulog.init({
-    token: "Y9Zgx55xlQweghPx2n",
+    token: "6DL6_9FqS9g6i866rz",
     version: "1.0.0",
-    endpoint: "http://localhost:3000",
+    // endpoint: "http://localhost:3000",
 });
 
 const app = express();
